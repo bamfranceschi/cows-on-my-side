@@ -37,6 +37,14 @@ function App() {
     setRScore(rScore - 5);
   };
 
+  const lReversal = () => {
+    setLScore(lScore + 5);
+  };
+
+  const rReversal = () => {
+    setRScore(rScore + 5);
+  };
+
   return (
     <div className="App">
       <Header />
@@ -52,6 +60,8 @@ function App() {
         lNotACow={lNotACow}
         rNotACow={rNotACow}
         newGame={newGame}
+        lReversal={lReversal}
+        rReversal={rReversal}
       />
     </div>
   );

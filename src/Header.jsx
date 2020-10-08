@@ -6,6 +6,10 @@ const RulesButton = styled.button`
   height: 3rem;
   width: 14rem;
   font-size: 1.3rem;
+  border-radius: 8%;
+  border: 2px solid darkblue;
+  background-color: white;
+  color: darkblue;
 `;
 
 function Header() {
@@ -17,7 +21,7 @@ function Header() {
   };
   return (
     <div>
-      <h1>
+      <h1 style={{ color: "darkblue" }}>
         <span role="img" aria-label="cow-emoji">
           🐮
         </span>{" "}
@@ -26,7 +30,7 @@ function Header() {
           🐮
         </span>
       </h1>
-      <h2>The Most Underrated Car Game Ever</h2>
+      <h2 style={{ color: "darkblue" }}>The Most Underrated Car Game Ever</h2>
       <RulesButton onClick={handleToggle}>
         {toggle ? `Them's the rules:` : `Rules live here`}
       </RulesButton>

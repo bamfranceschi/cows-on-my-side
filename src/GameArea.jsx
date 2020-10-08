@@ -6,6 +6,10 @@ const NewGameButton = styled.button`
   width: 12rem;
   font-size: 1.7rem;
   margin-top: 4rem;
+  border-radius: 8%;
+  border: 2px solid darkblue;
+  background-color: white;
+  color: darkblue;
 `;
 const GameCont = styled.div`
   display: flex;
@@ -16,6 +20,7 @@ const GameCont = styled.div`
 const TeamCard = styled.div`
   display: flex;
   flex-direction: column;
+  color: darkblue;
 `;
 
 const ButtonCont = styled.div`
@@ -30,6 +35,10 @@ const MyCowsButton = styled.button`
   font-size: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 3rem;
+  border-radius: 8%;
+  border: none;
+  background-color: mediumturquoise;
+  color: white;
 `;
 
 const TheirCowsButton = styled.button`
@@ -37,12 +46,20 @@ const TheirCowsButton = styled.button`
   width: 17rem;
   font-size: 2rem;
   margin-bottom: 3rem;
+  border-radius: 8%;
+  border: none;
+  background-color: lightcoral;
+  color: white;
 `;
 
 const NotACowButton = styled.button`
   height: 6rem;
   width: 17rem;
   font-size: 2rem;
+  border-radius: 8%;
+  border: 2px solid darkblue;
+  background-color: white;
+  color: darkblue;
 `;
 
 function GameArea(props) {
@@ -54,32 +71,50 @@ function GameArea(props) {
           <h3>L Team</h3>
           <h1>{`Score: ${props.lScore}`}</h1>
           <ButtonCont>
-            <MyCowsButton onClick={props.addLCows}>My cows</MyCowsButton>
-            <TheirCowsButton onClick={props.minusRCows}>
-              Their cows
-            </TheirCowsButton>
-            <NotACowButton onClick={props.lNotACow}>
-              NOT A COW{" "}
-              <span role="img" aria-label="thinking-face-emoji">
-                🤔
-              </span>{" "}
-            </NotACowButton>
+            <div>
+              <MyCowsButton onClick={props.addLCows}>My cows</MyCowsButton>
+              <button onClick={props.minusLCows}>j/k</button>
+            </div>
+            <div>
+              <TheirCowsButton onClick={props.minusRCows}>
+                Their cows
+              </TheirCowsButton>
+              <button onClick={props.addRCows}>oops</button>
+            </div>
+            <div>
+              <NotACowButton onClick={props.lNotACow}>
+                NOT A COW{" "}
+                <span role="img" aria-label="thinking-face-emoji">
+                  🤔
+                </span>{" "}
+              </NotACowButton>
+              <button onClick={props.lReversal}>totes was a cow</button>
+            </div>
           </ButtonCont>
         </TeamCard>
         <TeamCard>
           <h3>R Team</h3>
           <h1>{`Score: ${props.rScore}`}</h1>
           <ButtonCont>
-            <MyCowsButton onClick={props.addRCows}>My cows</MyCowsButton>
-            <TheirCowsButton onClick={props.minusLCows}>
-              Their cows
-            </TheirCowsButton>
-            <NotACowButton onClick={props.rNotACow}>
-              NOT A COW{" "}
-              <span role="img" aria-label="thinking-face-emoji">
-                🤔
-              </span>{" "}
-            </NotACowButton>
+            <div>
+              <MyCowsButton onClick={props.addRCows}>My cows</MyCowsButton>
+              <button onClick={props.minusRCows}>j/k</button>
+            </div>
+            <div>
+              <TheirCowsButton onClick={props.minusLCows}>
+                Their cows
+              </TheirCowsButton>
+              <button onClick={props.addLCows}>oops</button>
+            </div>
+            <div>
+              <NotACowButton onClick={props.rNotACow}>
+                NOT A COW{" "}
+                <span role="img" aria-label="thinking-face-emoji">
+                  🤔
+                </span>{" "}
+              </NotACowButton>
+              <button onClick={props.rReversal}>totes was a cow</button>
+            </div>
           </ButtonCont>
         </TeamCard>
       </GameCont>
